@@ -27,11 +27,11 @@ public class Dosage {
     }
 
     // methods
-    public void setAnimalWeightRangeFlag (boolean value) {
+    public void setAnimalWeightRangeFlag(boolean value) {
         AnimalWeightRangeFlag = value;
     }
 
-    public void setDrugAmount (float value) {
+    public void setDrugAmount(float value) {
         // If the value is less than or equal to 0, return an exception.
         if (value <= 0) {
             throw new IllegalArgumentException("Drug amount must be greater than 0.");
@@ -39,7 +39,7 @@ public class Dosage {
         DrugAmount = value;
     }
 
-    public void setUnitOfMeasurement (String value) {
+    public void setUnitOfMeasurement(String value) {
         // If the value is null or an empty string or it contains a blank space, return an exception.
         if (value == null || value.isEmpty()) {
             throw new IllegalArgumentException("Drug amount requires a unit of measurement specified or selected.");
@@ -47,15 +47,14 @@ public class Dosage {
         UnitOfMeasurement = value;
     }
 
-    public void setAnimalWeightRangeMinimum (float value) {
+    public void setAnimalWeightRangeMinimum(float value) {
 
         // If the animal weight range flag is turned on, do minimum animal weight validation.
         if (AnimalWeightRangeFlag) {
             // The minimum animal weight must be greater than 0.
             if (value > 0) {
                 AnimalWeightRangeMinimum = value;
-            }
-            else {
+            } else {
                 throw new IllegalArgumentException("If AnimalWeightRangeFlag is True, Animal weight range minimum must be greater than 0.");
             }
         }
@@ -64,15 +63,28 @@ public class Dosage {
             // The minimum animal weight must be 0.
             if (value == 0) {
                 AnimalWeightRangeMinimum = value;
-            }
-            else {
+            } else {
                 throw new IllegalArgumentException("Animal weight range minimum cannot be set if AnimalWeightRangeFlag is false.");
             }
         }
     }
 
     // TODO: Raven will complete this method using the setAnimalWeightRangeMinimum method as a template.
-    public void setAnimalWeightRangeMaximum (float value) {
-        AnimalWeightRangeMaximum = value;
+    public void setAnimalWeightRangeMaximum(float value) {
+        if (AnimalWeightRangeFlag) {
+            if (value > 0) {
+                AnimalWeightRangeMaximum = value;
+            } else {
+                throw new IllegalArgumentException("If AnimalWeightRangeFlag is True, Animal weight range maximum must be greater than 0.");
+            }
+        } else {
+            if (value == 0) {
+                AnimalWeightRangeMaximum = value;
+            } else {
+                throw new IllegalArgumentException("Animal weight range maximum cannot be set if AnimalWeightRangeFlag is false.");
+            }
+
+        }
+
     }
 }

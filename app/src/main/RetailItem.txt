@@ -1,0 +1,48 @@
+#Raven Cepeda
+#Intro to Programming
+#Professor Woods
+#10/31/2014
+#Creating a class called 'RetailItem' to hold data in regards to clothing items
+#create class RetailItem
+class RetailItem:
+    #create constructor __init__ to initialize the attributes.
+    #TODO: RAVEN: My additional note is that: "self" is the object itself
+    def __init__(self, description, units, price):
+        #create attributes to have data returned back to
+        self.__description = description
+        self.__units = units
+        self.__price = price
+
+        #TODO: RAVEN: Read notes below about naming conventions.
+        # Using __ (two underscores) preceding an attribute name is a standard Python syntax convention unrelated to my personal opinion / advice below.
+        # This example works: __unitsOfInventory (Pascal Case) or __UnitsOfInventory (Camel Case)
+        # This example works too but I don't recommend it for separating words because it uses up more space unnecessarily: __units_of_inventory
+
+        def getDescription(self):
+            return self.__description
+        def setDescription(self, description)
+            self.__description = description
+        #TODO: RAVEN: Create the getters and setters for the other two attributes.
+
+        def __str__(self)
+            return "Description: " + self.__description + \
+                    "\nUnits in Inventory: " + self.__units + \
+                    "\nPrice: " + self.__price
+
+#create main method to print methods above
+def main():
+
+    #Example 1:
+    item1 = RetailItem("Jacket", 12, 59.95)
+    #TODO: RAVEN: Continue creating the other two items this way.
+
+    #Example 2:
+    item1 = RetailItem()
+    item1.setDescription("Jacket")
+    #TODO: RAVEN: Try example 2 for practice/learning purposes. Continue using the other setters that Raven will define for setting the other two attribute values.
+
+    #TODO: RAVEN: Look at the example on pages 438-439 where they print savings.
+    #TODO: RAVEN: Continue printing the other two items after defining them in TODOs above.
+    print(item1)
+
+main()

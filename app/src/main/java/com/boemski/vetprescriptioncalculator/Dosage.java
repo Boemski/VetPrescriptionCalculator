@@ -11,6 +11,9 @@ public class Dosage {
     public String UnitOfMeasurement;
 
     // weight range must be in kilograms
+    // converting kilos to lbs, or lbs to kilos equation
+    // kilos to lbs (kg * 2.2)
+    // lbs to kilos (lbs\2.2)
     // TODO: Make sure the classes saving this data use a rule that converts from pounds to kilograms.
     public float AnimalWeightRangeMinimum;
     public float AnimalWeightRangeMaximum;
